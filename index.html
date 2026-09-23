@@ -15,14 +15,27 @@
 
     <!-- ส่วนหัวของเว็บไซต์ (Header Block) -->
     <header class="header-container">
+        <div class="header-top">
+            
         <h1 class="main-title">Curriculum Vitae</h1>
+
+        <button class="burger-btn" id="burgerBtn" aria-label="Toggle menu">☰</button>
+        </div>
         <p class="subtitle">Web Technology & Development Student</p>
+
+        <nav class="nav-menu" id="navMenu">
+    <a href="#personal">Personal Info</a>
+    <a href="#media">CLBS & Mini Game</a>
+    <a href="#education">Education & Skills</a>
+    <a href="#projects">Projects & Activities</a>
+    <a href="#contact">Contact Me</a>
+        </nav>
     </header>
 
-    <div class="content-container">
+    <main class="content-container">
 
         <!-- 1. ข้อมูลส่วนตัว (Personal Info) -->
-        <section class="cv-section">
+        <section class="cv-section" id="personal">
             <h2 class="section-title">Personal Information</h2>
             <div class="info-card">
                 <p class="info-text"><strong>Name:</strong> Jakrapong</p>
@@ -31,31 +44,72 @@
             </div>
         </section>
 
-        <!-- 2. วิดีโอและเสียงแนะนำตัว (Video & Audio Elements) -->
-        <section class="cv-section">
-            <h2 class="section-title">Media Intro</h2>
-            <div class="media-container">
-                <div class="media-box">
-                    <h3>Self Introduction Video</h3>
-                    <!-- แท็กวิดีโอ (ใส่ไฟล์ video.mp4 หรือลบ src ออกได้ถ้ายังไม่มีไฟล์จริง) -->
-                    <video class="custom-video" controls width="320">
-                        <source src="sample-video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+        
+        <section class="cv-section" id="media">
+    <h2 class="section-title">CLBS & Mini Game</h2>
+            <div class="media-section">
+                
+
+                <div class="right-media-box">
+    <h3>Slideshow / Carousel</h3>
+
+    <!-- Carousel -->
+            <div class="carousel-container">
+                 <div class="carousel-slide fade">
+                    <img src="https://onlinedegrees.sandiego.edu/wp-content/uploads/2022/11/what-is-data-analytics-mads.jpg" alt="Slide 1">
+                    <div class="carousel-caption">Nature</div>
                 </div>
-                <div class="media-box">
-                    <h3>Audio Intro</h3>
-                    <!-- แท็กเสียง (ใส่ไฟล์ audio.mp3 หรือลบ src ออกได้ถ้ายังไม่มีไฟล์จริง) -->
-                    <audio class="custom-audio" controls>
-                        <source src="sample-audio.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
+
+             <div class="carousel-slide fade">
+                    <img src="https://utgtech.us/wp-content/uploads/2023/07/Is-Data-Analytics-Right-for-Me.jpg.webp">
+                    <div class="carousel-caption">Snow</div>
+                </div>
+            
+                <div class="carousel-slide fade">
+                    <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_Data_Analysis.jpg" alt="Slide 3">
+                    <div class="carousel-caption">Northern Lights</div>
+                </div>
+            
+                <div class="carousel-slide fade">
+                    <img src="https://img.pptvhd36.com/thumbor/2024/08/28/news-717377a.jpg" alt="Slide 4">
+                    <div class="carousel-caption">Mountains</div>
+                </div>
+            
+                <!-- ปุ่ม Previous / Next -->
+                <a class="carousel-prev" onclick="plusSlides(-1)">❮</a>
+                <a class="carousel-next" onclick="plusSlides(1)">❯</a>
+            </div>
+
+            <!-- จุดบอกตำแหน่งสไลด์ -->
+            <div class="carousel-dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+                    <div class="game-buttons-row">
+                        <div class="game-btn-container">
+                            <h4>Car Escape Game</h4>
+                            <button type="button" class="btn-game" onclick="openCarGame()">Play Car Escape</button>
+                        </div>
+
+                        <div class="game-btn-container">
+                            <h4>Tic-Tac-Toe</h4>
+                            <button type="button" class="btn-game" onclick="openTicTacToe()">Play XO</button>
+                        </div>
+
+                        <div class="game-btn-container">
+                            <h4>Number Guessing Game</h4>
+                            <button type="button" class="btn-game" onclick="playGuessingGame()">Play CLBS Mini Game</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- 3. ตารางประวัติการศึกษาและทักษะ (Table Element) -->
-        <section class="cv-section">
+        <section class="cv-section" id="education">
             <h2 class="section-title">Education & Skills</h2>
             <table class="custom-table">
                 <thead>
@@ -86,7 +140,7 @@
         </section>
 
         <!-- 4. โปรเจกต์และกิจกรรม (Projects & Activities) -->
-        <section class="cv-section">
+        <section class="cv-section" id="projects">
             <h2 class="section-title">Projects & Activities</h2>
             <ul class="custom-list">
                 <li class="list-item">FTU IT Laboratory Computer Booking System (Front-End Design)</li>
@@ -96,34 +150,60 @@
         </section>
 
         <!-- 5. ฟอร์มสำหรับติดต่อ (Form Element) -->
-        <section class="cv-section">
+        <section class="cv-section" id="contact">
             <h2 class="section-title">Contact Me</h2>
-            <form class="contact-form" action="#" method="post">
+            <form id="contactForm" class="contact-form" action="#" method="post">
                 <div class="form-group">
                     <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" pattern="[A-Za-z\s]+" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" class="form-input form-textarea" rows="4" placeholder="Write your message here..."></textarea>
+                    <textarea id="message" name="message" class="form-input form-textarea" rows="4" placeholder="Write your message here..." required></textarea>
                 </div>
 
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </section>
 
-    </div>
+    </main>
 
     <!-- ส่วนท้ายเว็บ (Footer) -->
     <footer class="footer-container">
-        <p>&copy; 2026 Jakrapong. All rights reserved.</p>
-    </footer>
-<script src="script.js"></script>
+    <p>&copy; 2026 Jakrapong. All rights reserved.</p>
+    <p>Number of visitors: <span id="visitorcount">0</span> persons</p>
+</footer>
+
+    <div id="carGameModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" class="close-btn" onclick="closeCarGame()" aria-label="Close">&times;</button>
+            <h3>Car Escape Road Game</h3>
+            <canvas id="carGameCanvas" width="320" height="480"></canvas>
+            <p>Use the left and right arrow keys to avoid obstacles.</p>
+        </div>
+    </div>
+
+    <div id="ticTacToeModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" class="close-btn" onclick="closeTicTacToe()" aria-label="Close">&times;</button>
+            <h3>Tic-Tac-Toe</h3>
+            <p id="ticTacToeStatus">Player X's turn</p>
+            <div id="ticTacToeBoard" class="tic-tac-toe-board"></div>
+            <button type="button" class="btn-game" onclick="resetTicTacToe()">Restart Game</button>
+        </div>
+    </div>
+
+    <!-- เชื่อมโยงกับไฟล์ JavaScript External -->
+    <script src="script.js"></script>
+    <a href="login.html" class="btn-login-link">Go to Login Page</a>
 </body>
 </html>
+
+
+
